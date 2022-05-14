@@ -27,12 +27,13 @@ void loop() {
 
 sensors_event_t a,g,sicaklik;
 mpu.getEvent(&a,&g,&sicaklik);
+  
 Serial.print("X:");
-Serial.print(g.gyro.x);
+Serial.print(g.acceleration.x);
 Serial.print(",Y:");
-Serial.print(g.gyro.y);
+Serial.print(g.acceleration.y);
 Serial.print(",Z:");
-Serial.print(g.gyro.z);
+Serial.print(g.acceleration.z);
 Serial.println("rad/s");
 Serial.print("Sıcaklık:");
 Serial.print(sicaklik.temperature);
