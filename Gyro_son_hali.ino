@@ -1,3 +1,4 @@
+
 #include <Adafruit_MPU6050.h>
 #include <Adafruit_Sensor.h>
 #include <Wire.h>
@@ -26,15 +27,17 @@ void loop() {
 
 sensors_event_t a,g,sicaklik;
 mpu.getEvent(&a,&g,&sicaklik);
-Serial.println("X:");
-Serial.println(g.gyro.x);
-Serial.println(",Y:");
-Serial.println(g.gyro.y);
-Serial.println(",Z:");
-Serial.println(g.gyro.z);
-Serial.println("Sıcaklık:");
-Serial.println("temp.tempure");
+Serial.print("X:");
+Serial.print(g.gyro.x);
+Serial.print(",Y:");
+Serial.print(g.gyro.y);
+Serial.print(",Z:");
+Serial.print(g.gyro.z);
+Serial.println("rad/s");
+Serial.print("Sıcaklık:");
+Serial.print(sicaklik.temperature);
 Serial.println("C");
-
+Serial.println("");
+delay(500);
 
 }
